@@ -1,3 +1,3 @@
 #! /bin/bash
 
-sudo docker build -t receipt-parser .
+sudo docker build -t notdaniel/receipt-parser:dev .
