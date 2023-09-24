@@ -38,6 +38,8 @@ android {
     }
     buildFeatures {
         compose = true
+        dataBinding = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -66,4 +68,12 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+// CameraX core library using the camera2 implementation
+    val camerax_version = "1.2.3"
+
+    implementation("androidx.camera:camera-core:1.2.3")
+    implementation("androidx.camera:camera-camera2:1.2.3")
+    implementation("androidx.camera:camera-lifecycle:1.2.3")
+    implementation("androidx.camera:camera-view:${camerax_version}")
 }

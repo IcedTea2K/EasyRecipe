@@ -1,8 +1,9 @@
 package com.easy_recipe.front_end
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -15,17 +16,9 @@ import com.easy_recipe.front_end.ui.theme.FrontendTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            FrontendTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
-                }
-            }
-        }
+        Log.i("Main", "Helloooooooooo")
+        val intent = Intent(this, CaptureView::class.java)
+        this.startActivity(intent)
     }
 }
 
@@ -37,10 +30,15 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun GreetingPreview() {
     FrontendTheme {
-        Greeting("Rey")
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Greeting("Reyyyyyyyyyyy!")
+        }
     }
 }
