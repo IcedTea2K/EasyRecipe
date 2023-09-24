@@ -19,6 +19,8 @@ def getReceiptItems(img):
 	retObj = {"items": []}
 	# print(receipts.documents)
 	receipt = receipts.documents[0]
+	if receipt.fields.get("MerchantName"):
+		retObj["merchant_name"] = receipt.fields.get("MerchantName")
 	if receipt.fields.get("Items"):
 		for idx, item in enumerate(receipt.fields.get("Items").value):
 			item_description = item.value.get("Description")
